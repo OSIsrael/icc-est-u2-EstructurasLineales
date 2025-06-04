@@ -60,4 +60,3 @@ public class ColaG<T> {
         return size;
     }
 }
-

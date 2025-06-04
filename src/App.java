@@ -6,7 +6,7 @@ import models.Persona;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        /*Stack stack=new Stack();
+        Stack stack=new Stack();
         stack.push(10);
         stack.push(-1);
         stack.push(0);
@@ -17,8 +17,8 @@ public class App {
         stack.pop();
         stack.peek();
         stack.printSize();
-        stack.printStack();*/
-        /*  
+        stack.printStack();
+        
         System.out.println("NODO GENERICOS");
         System.out.println("ENTEROS");
         StackG<Integer> stackG=new StackG<Integer>();
@@ -46,8 +46,8 @@ public class App {
         stackG2.pop();
         stackG2.peek();
         stackG2.printSize();
-        stackG2.printStack();*/
-        /*  
+        stackG2.printStack();
+        
         Cola cola=new Cola();
             cola.add(5);
             cola.add(7);
@@ -56,7 +56,7 @@ public class App {
             cola.remove();
             System.out.println("tam= "+cola.size);
             cola.printCola();
-            */
+            
         Persona p1= new Persona("Pablo");
         Persona p2= new Persona("Juan");
         Persona p3= new Persona("Maria");
