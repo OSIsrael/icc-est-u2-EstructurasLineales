@@ -57,19 +57,67 @@ public class App {
             System.out.println("tam= "+cola.size);
             cola.printCola();
             
-        Persona p1= new Persona("Pablo");
-        Persona p2= new Persona("Juan");
-        Persona p3= new Persona("Maria");
-        ColaG<Persona> colaG=new ColaG<Persona>();
-        colaG.add(p1);
-        colaG.add(p2);
-        colaG.add(p3);
-        System.out.println(colaG.getsize());
+       Persona p1 = new Persona("Pablo");
+        Persona p2 = new Persona("Juan");
+        Persona p3 = new Persona("Maria");
+        Persona p4 = new Persona("Ana");
+        Persona p5 = new Persona("Carlos");
+        
+        ColaG<Persona> colaG = new ColaG<>();
+        colaG.add(p1); 
+        colaG.add(p2); 
+        colaG.add(p3); 
+        
+        System.out.println("--- Cola inicial ---");
+        System.out.println("Tamaño: " + colaG.getsize()); 
+        colaG.printCola(); 
+        System.out.println();
+
+        System.out.println("--- Eliminar a Juan (en medio) ---");
+        Persona removed = colaG.removePerson("Juan");
+        if (removed != null) {
+            System.out.println("Eliminada: " + removed.getNombre()); 
+        }
+        System.out.println("Tamaño: " + colaG.getsize()); 
+        colaG.printCola(); 
+        System.out.println();
+
+        System.out.println("--- Eliminar a Pablo (el primero) ---");
+        removed = colaG.removePerson("Pablo");
+        if (removed != null) {
+            System.out.println("Eliminada: " + removed.getNombre());
+        }
+        System.out.println("Tamaño: " + colaG.getsize()); 
+        colaG.printCola(); 
+        System.out.println();
+
+        System.out.println("--- Eliminar a Maria (la ultima, ahora primera) ---");
+        removed = colaG.removePerson("Maria");
+        if (removed != null) {
+            System.out.println("Eliminada: " + removed.getNombre()); 
+        }
+        System.out.println("Tamaño: " + colaG.getsize()); 
+        colaG.printCola(); 
+        System.out.println();
+
+        System.out.println("--- Intentar eliminar de una cola vacía ---");
+        removed = colaG.removePerson("Inventado"); 
+        System.out.println("Tamaño: " + colaG.getsize()); 
         colaG.printCola();
         System.out.println();
-        System.out.println("Atiende a la persona => "+colaG.remove());
-        System.out.println(colaG.getsize());
-        colaG.printCola();
+
+        System.out.println("--- Añadir más personas y eliminar la última ---");
+        colaG.add(p4); 
+        colaG.add(p5); 
+        System.out.println("Tamaño: " + colaG.getsize()); 
+        colaG.printCola(); 
+        
+        removed = colaG.removePerson("Carlos"); 
+        if (removed != null) {
+            System.out.println("Eliminada: " + removed.getNombre());
+        }
+        System.out.println("Tamaño: " + colaG.getsize()); 
+        colaG.printCola(); 
 
 
     }
