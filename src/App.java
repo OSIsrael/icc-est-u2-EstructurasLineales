@@ -2,11 +2,12 @@ import controllers.Cola;
 import controllers.ColaG;
 import controllers.Stack;
 import controllers.StackG;
+import ejercicio_01_sign.SignValidator;
 import models.Persona;
-
+import ejercicio_02_sorting.StackSorter;
 public class App {
     public static void main(String[] args) throws Exception {
-        Stack stack=new Stack();
+        /*Stack stack=new Stack();
         stack.push(10);
         stack.push(-1);
         stack.push(0);
@@ -117,8 +118,56 @@ public class App {
             System.out.println("Eliminada: " + removed.getNombre());
         }
         System.out.println("Tamaño: " + colaG.getsize()); 
-        colaG.printCola(); 
+        colaG.printCola(); */
+        // EJERCICIO 1
+        System.out.println("--- EJERCICIO 1 ---");
+        SignValidator valida = new SignValidator();
 
+        String entrada = "([]){}"; 
+        System.out.println("Input: \"" + entrada + "\" Output: " + valida.isValid(entrada)); 
+
+        String entrada2 = "({)}"; 
+        System.out.println("Input: \"" + entrada2 + "\" Output: " + valida.isValid(entrada2)); 
+        
+        String entrada3 = "[{()}]";
+        System.out.println("Input: \"" + entrada3 + "\" Output: " + valida.isValid(entrada3)); 
+
+        String entrada4 = "([)]";
+        System.out.println("Input: \"" + entrada4 + "\" Output: " + valida.isValid(entrada4)); 
+        System.out.println();
+
+       // EJERCICIO 2
+        System.out.println("--- EJERCICIO 2 ---");
+        StackSorter sorter = new StackSorter();
+        StackG<Integer> s = new StackG<>();
+        s.push(5);
+        s.push(1);
+        s.push(4);
+        s.push(2);
+
+        System.out.print("Pila original: ");
+        s.printStack(); 
+
+        sorter.sortStack(s);
+
+        System.out.print("Pila ordenada: ");
+        s.printStack(); 
+        System.out.println();
+
+        StackG<Integer> otroStack = new StackG<>();
+        otroStack.push(10);
+        otroStack.push(3);
+        otroStack.push(8);
+        otroStack.push(1);
+        otroStack.push(6);
+
+        System.out.print("Otra pila original: ");
+        otroStack.printStack(); 
+
+        sorter.sortStack(otroStack);
+
+        System.out.print("Otra pila ordenada: ");
+        otroStack.printStack(); 
 
     }
 }
